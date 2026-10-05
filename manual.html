@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Manual Driver Sign-In</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script defer src="manual.js"></script>
+</head>
+<body>
+  <main class="form-shell">
+    <header class="form-header">
+      <a class="back-link" href="index.html">← Home</a>
+      <div class="brand-mark small" aria-label="MFG">M</div>
+      <h1>Manual Driver Sign-In</h1>
+      <p>For drivers without a Mobiledock PIN</p>
+    </header>
+
+    <form id="driverForm" class="driver-form" autocomplete="off">
+      <label>Company / Carrier<input name="company_carrier" type="text" required maxlength="120" /></label>
+      <label>Driver Name<input name="driver_name" type="text" required maxlength="120" /></label>
+      <label>Rego<input name="rego" type="text" required maxlength="30" autocapitalize="characters" /></label>
+      <label>Drop Off / Pick Up
+        <select name="movement_type" required>
+          <option value="">Select</option>
+          <option value="Drop Off">Drop Off</option>
+          <option value="Pick Up">Pick Up</option>
+        </select>
+      </label>
+      <label>Quantity<input name="quantity" type="number" required min="1" step="1" inputmode="numeric" /></label>
+      <label>Load Type
+        <select name="load_type" required>
+          <option value="">Select</option>
+          <option value="Pallets">Pallets</option>
+          <option value="Cartons">Cartons</option>
+          <option value="Cages">Cages</option>
+          <option value="Bins">Bins</option>
+          <option value="Satchels">Satchels</option>
+        </select>
+      </label>
+      <label>Reference No. <span class="muted">(optional)</span><input name="reference_no" type="text" maxlength="120" /></label>
+      <label class="declaration"><input name="declaration_accepted" type="checkbox" required /><span>I am fit to drive and will obey all site rules.</span></label>
+      <button id="submitBtn" type="submit" class="primary-btn">Submit Sign-In</button>
+      <a class="secondary-btn" href="index.html">Cancel</a>
+      <p id="formMessage" class="form-message" role="status" aria-live="polite"></p>
+    </form>
+  </main>
+
+  <div id="successOverlay" class="success-overlay" hidden>
+    <div class="success-card">
+      <div class="success-icon">✓</div>
+      <h2>Sign-in completed successfully</h2>
+      <p>Returning to the main screen…</p>
+    </div>
+  </div>
+</body>
+</html>

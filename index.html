@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>MFG Driver Sign-In</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="kiosk-body">
+  <main class="shell">
+    <header class="brand-header">
+      <div class="brand-mark" aria-label="MFG">M</div>
+      <div>
+        <h1>Driver Sign-In</h1>
+        <p>Select the option that applies to you.</p>
+      </div>
+    </header>
+
+    <section class="choice-grid">
+      <a class="choice-card" href="https://integrations.mobiledock.com/checkin/flow/b1048197-3c18-4c77-842d-695fe81de49e" rel="noopener">
+        <span class="choice-kicker">I have a PIN</span>
+        <h2>Mobiledock</h2>
+        <p>Use your existing Mobiledock PIN to continue.</p>
+        <span class="choice-button">Continue to Mobiledock</span>
+      </a>
+
+      <a class="choice-card choice-card-accent" href="manual.html">
+        <span class="choice-kicker">I do not have a PIN</span>
+        <h2>No Mobiledock PIN</h2>
+        <p>Complete the MFG manual driver sign-in form.</p>
+        <span class="choice-button">Manual Sign-In</span>
+      </a>
+    </section>
+
+    <footer class="home-footer">
+      <a href="admin.html">Coordinator Admin</a>
+    </footer>
+  </main>
+</body>
+</html>

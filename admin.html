@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MFG Driver Records</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script defer src="admin.js"></script>
+</head>
+<body class="admin-body">
+  <main class="admin-shell">
+    <header class="admin-header">
+      <div><p class="eyebrow">MFG</p><h1>Driver Records</h1><p>Coordinator access only</p></div>
+      <a href="index.html" class="secondary-btn compact">Driver Home</a>
+    </header>
+
+    <section id="loginPanel" class="panel login-panel">
+      <h2>Coordinator Login</h2>
+      <form id="loginForm" class="login-form">
+        <label>Email<input id="email" type="email" required autocomplete="username" /></label>
+        <label>Password<input id="password" type="password" required autocomplete="current-password" /></label>
+        <button type="submit" class="primary-btn">Sign In</button>
+        <p id="loginMessage" class="form-message"></p>
+      </form>
+    </section>
+
+    <section id="recordsPanel" hidden>
+      <div class="toolbar">
+        <div>
+          <label>From<input id="fromDate" type="date" /></label>
+          <label>To<input id="toDate" type="date" /></label>
+          <button id="filterBtn" class="secondary-btn compact" type="button">Apply</button>
+        </div>
+        <div>
+          <button id="exportBtn" class="primary-btn compact" type="button">Export CSV</button>
+          <button id="signOutBtn" class="secondary-btn compact" type="button">Sign Out</button>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Date / Time</th><th>Company / Carrier</th><th>Driver</th><th>Rego</th><th>Purpose</th><th>Qty</th><th>Load Type</th><th>Reference</th><th>Declaration</th></tr></thead>
+          <tbody id="recordsBody"></tbody>
+        </table>
+      </div>
+      <p id="recordsMessage" class="form-message"></p>
+    </section>
+  </main>
+</body>
+</html>
